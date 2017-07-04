@@ -4,6 +4,8 @@
 #                Configuration File
 ####################################################
 
+# Should the plugin notify OPs when a new update is released? (SUGGESTED VALUE IS "true")
+update-notify: true
 
 #**************************************************#
 #                    KNOCKBACK                     #
@@ -43,6 +45,36 @@ knockback:
     # 1.1 means 10% more knockback for Knockback I, 2.2 for Knockback II etc.
     knockback-multiplier: 1.1
 
+#**************************************************#
+#                     W-TAPPING                    #
+#**************************************************#
+w-tap:
+  # Should the w-tap manager be enabled and check when a player is w-tapping?
+  enabled: true
+
+  # Set this to true to enable debug mode. Debug mode will send a notification to OPs every tick that notify them
+  # when he is w-tapping or not. This is useful to check the w-tap values to see if the delays works for your pvp style.
+  debug: false
+
+  # How long (in ticks, 1 tick = 50ms) should the player stand still before detecting him as NOT moving?
+  not-moving-delay: 2
+
+  # What is the maximum delay (ms) between pressing W key twice (sprinting/not sprinting) for detecting a player as w-tapping?
+  # Lower value = pressing W faster for valid w-tap. Higher value = more easy to w-tap.
+  # (Please set values near multiples of 50 like: 150, 160, 195, 200, 455 to be more accurate as possible.)
+  sprinting-delay-ms: 200
+
+  # Section related to W-tap knockback modifiers. The knockback will be multiplied by this value.
+  # 1.05 means 5% MORE knockback while 0.98 means 2% LESS knockback (suggestion: keep this values between -10% and +10%)
+  knockback-modifier:
+      # kb modifiers for attacker player, this is the knockback (modifier) you DEAL if w-tapping:
+      as-damager:
+          horizontal: 1.05
+          vertical: 1.03
+      # kb modifiers for danaged player, this is the knockback (modifier) you RECEIVE if w-tapping:
+      as-damaged:
+          horizontal: 0.95
+          vertical: 0.97
 
 #**************************************************#
 #                   COMBO MODE                     #
@@ -72,6 +104,6 @@ randomizer:
   # Section related to random knockback modifiers. Values are in percentage.
   modifier:
     # Horizontal maximum percentage factor. (5 means that a maximum of 5% will be randomly added for each hit)
-    horizontal: 5
+    horizontal: 4
     # Vertical maximum percentage factor.
-    vertical: 3
+    vertical: 2
