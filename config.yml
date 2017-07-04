@@ -1,0 +1,77 @@
+####################################################
+#   KnockbackMaster by xDefcon <luigi@xdefcon.com>
+# www.spigotmc.org/resources/knockbackmaster.42721/
+#                Configuration File
+####################################################
+
+
+#**************************************************#
+#                    KNOCKBACK                     #
+#**************************************************#
+# Section related to the Knockback multipliers.
+# 1.0 means "standard" KB, for instance 1 block.
+# 1.1 means 10% more than the previous knockback.
+# Please consider that the knockback is processed
+# with a certain order.
+#**************************************************#
+knockback:
+  normal:
+    # Horizontal knockback, affects only X and Z coordinate values.
+    horizontal: 0.4
+    # Vertical knockback, affects only Y coordinate value.
+    vertical: 0.36
+
+  # Sprinting knockback values. This multipliers will be used if the damager is sprinting
+  # By default in Minecraft, if the damager player is sprinting, he deals more knockback to the damaged one.
+  # This is the reason of PvP movement-related actions like W-tapping.
+  sprinting:
+    # Horizontal sprint knockback, affects only X and Z coordinate values.
+    horizontal: 0.8
+    # Vertical sprint knockback, affects only Y coordinate value.
+    vertical: 0.42
+
+  # Air knockback values. Section related to the knockback that a player should receive if in air.
+  # Usually, if the damaged player is taking damage while he's in the air, he will receive less knockback
+  # both horizontally and vertically.
+  air:
+    # Air Multiplier, 1.0 means no difference, 0.8 means 20% less knockback while in air.
+    in-air-multiplier: 0.8
+
+  # Enchantment section.
+  enchantment:
+    # If the damager player has Knockback enchantment, the dealt knockback will be multiplied by this value.
+    # 1.1 means 10% more knockback for Knockback I, 2.2 for Knockback II etc.
+    knockback-multiplier: 1.1
+
+
+#**************************************************#
+#                   COMBO MODE                     #
+#**************************************************#
+combo-mode:
+  # Should the combo mode be enabled when a player eats an enchanted golden apple?
+  enabled: false
+
+  # Set this to true if you want to notify players when combo mode is enabled (after eating gapple)
+  # and disabled (when the time is expired). You can edit the messages in the messages.yml config file.
+  notify-player: true
+
+  # How long should the combo effect be active? Set this value in seconds.
+  gapple-duration: 30
+
+  # No damage ticks (basically set this to 1 if you want allow 20 hits per sec. 2 if 10 etc.)
+  # This value represent the number of ticks that should occur between 2 hits.
+  no-damage-ticks: 3
+
+#**************************************************#
+#                   RANDOMIZER                     #
+#**************************************************#
+randomizer:
+  # Set this to false if you want to DISABLE the randomize feature.
+  enabled: true
+
+  # Section related to random knockback modifiers. Values are in percentage.
+  modifier:
+    # Horizontal maximum percentage factor. (5 means that a maximum of 5% will be randomly added for each hit)
+    horizontal: 5
+    # Vertical maximum percentage factor.
+    vertical: 3
