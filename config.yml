@@ -41,9 +41,17 @@ knockback:
 
   # Enchantment section.
   enchantment:
-    # If the damager player has Knockback enchantment, the dealt knockback will be multiplied by this value.
-    # 1.1 means 10% more knockback for Knockback I, 2.2 for Knockback II etc.
-    knockback-multiplier: 1.1
+    # Knockback enchantment multipliers. You can configure a specific multiplier for each knockback level (Knockback I, II, etc.)
+    # If you have, for instance, KnockbackIV, you can add '4' after '3'. If you set 1.10, this results in a 10% increase.
+    # If you set 2.15, this results in a 115% increase. The default values are similar to the standard Knockback I and II.
+    knockback-level:
+      '1': 2.05
+      '2': 2.9
+      '3': 3.3
+      # If the enchant level is none of the above, this multiplier will be used.
+      other: 3.5
+      # Should the knockback be the same also if the player is sprinting? (set to true for vanilla-like experience).
+      ignore-sprinting: true
 
 #**************************************************#
 #                     W-TAPPING                    #
