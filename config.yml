@@ -7,6 +7,9 @@
 # Should the plugin notify OPs when a new update is released? (SUGGESTED VALUE IS "true")
 update-notify: true
 
+# Toggle debug mode (leave it as false if not requested by the developer).
+debug: false
+
 #**************************************************#
 #                    KNOCKBACK                     #
 #**************************************************#
