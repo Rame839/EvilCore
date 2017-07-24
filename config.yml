@@ -91,8 +91,12 @@ w-tap:
 #                   COMBO MODE                     #
 #**************************************************#
 combo-mode:
-  # Should the combo mode be enabled when a player eats an enchanted golden apple?
+  # Should the combo mode be enabled?
   enabled: false
+
+  # Select the type of the combo mode. 1 means that the combo mode will be enabled when a player eats an enchanted golden apple.
+  # 2 means a PERMANENT combo mode, from the login, to the logout of a player.
+  type: 1
 
   # Set this to true if you want to notify players when combo mode is enabled (after eating gapple)
   # and disabled (when the time is expired). You can edit the messages in the messages.yml config file.
