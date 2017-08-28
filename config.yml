@@ -56,6 +56,32 @@ knockback:
       # Should the knockback be the same also if the player is sprinting? (set to true for vanilla-like experience).
       ignore-sprinting: true
 
+  # Section related to the knockback caused by BOW
+  bow:
+    # Toggle this to false if you want to use the Minecraft's standard method to handle the KB of a bow.
+    enabled: true
+
+    # Standard bow KB, horizontal and vertical
+    normal:
+      horizontal: 0.75
+      vertical: 0.35
+
+    # Air BOW knockback values. Section related to the knockback that a player should receive if in air.
+    air:
+      # Air Multiplier, 1.0 means no difference, 0.8 means 20% less knockback while in air.
+      in-air-multiplier: 0.8
+
+    # Enchantment section.
+    enchantment:
+      # Punch (Arrow Knockback) enchantment multipliers. You can configure a specific multiplier for each knockback level (Punch I, II, etc.)
+      # If you have, for instance, PunchIII, you can add '3' after '2'. If you set 1.10, this results in a 10% increase.
+      # If you set 2.15, this results in a 115% increase. The default values are similar to the standard Punch I and II.
+      punch-level:
+        '1': 2.0
+        '2': 2.85
+        # If the enchant level is none of the above, this multiplier will be used.
+        other: 3.0
+
 #**************************************************#
 #                     W-TAPPING                    #
 #**************************************************#
