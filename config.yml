@@ -108,7 +108,7 @@ w-tap:
       as-damager:
           horizontal: 1.05
           vertical: 1.03
-      # kb modifiers for danaged player, this is the knockback (modifier) you RECEIVE if w-tapping:
+      # kb modifiers for damaged player, this is the knockback (modifier) you RECEIVE if w-tapping:
       as-damaged:
           horizontal: 0.95
           vertical: 0.97
