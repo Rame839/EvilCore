@@ -124,6 +124,21 @@ combo-mode:
   # 2 means a PERMANENT combo mode, from the login, to the logout of a player.
   type: 1
 
+  # Section related for the knockback in combo mode. These values will replace the "knockback.normal" and
+  # "knockback.sprinting" values and will be applied only if the damaged player is in combo mode.
+  # Please consider that the "knockback.air.in-air-multiplier" is still valid here, and you should edit it if you
+  # want the players in combo to go too high when hit (some people like this behavior, some does not).
+  knockback:
+    # Standard knockback combo values. This multipliers will be used if the damaged player is in combo mode.
+    normal:
+      horizontal: 0.42
+      vertical: 0.32
+
+    # Sprinting knockback values. This multipliers will be used if the damager is sprinting and if the damaged player is in combo mode.
+    sprinting:
+      horizontal: 0.85
+      vertical: 0.37
+
   # Set this to true if you want to notify players when combo mode is enabled (after eating gapple)
   # and disabled (when the time is expired). You can edit the messages in the messages.yml config file.
   notify-player: true
