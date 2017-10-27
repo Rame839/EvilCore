@@ -30,6 +30,12 @@ knockback:
   # By default in Minecraft, if the damager player is sprinting, he deals more knockback to the damaged one.
   # This is the reason of PvP movement-related actions like W-tapping.
   sprinting:
+    # Select the sprinting module system. Available values: "standard" and "legacy".
+    # "standard" is the new module that will improve the sprinting detection (better detection)
+    # "legacy" is the old method (pre v2.10.0) that you may find better if you started with a version below 2.10.0.
+    # If you set "legacy" as method, you should set the "knockback.air.horizontal" multiplier to 1.0 to achieve the exact same
+    # as version 2.9 and below.
+    mode: "standard"
     # Horizontal sprint knockback, affects only X and Z coordinate values.
     horizontal: 0.8
     # Vertical sprint knockback, affects only Y coordinate value.
@@ -40,7 +46,8 @@ knockback:
   # both horizontally and vertically.
   air:
     # Air Multiplier, 1.0 means no difference, 0.8 means 20% less knockback while in air.
-    in-air-multiplier: 0.8
+    horizontal: 0.6
+    vertical: 0.8
 
   # Enchantment section.
   enchantment:
