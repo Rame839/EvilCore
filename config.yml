@@ -146,6 +146,13 @@ combo-mode:
       horizontal: 0.85
       vertical: 0.37
 
+    # Combo mode air knockback values. Section related to the knockback that a player should receive if in air
+    # and he is in combo mode.
+    air:
+      # Air Multiplier, 1.0 means no difference, 0.6 means 40% less knockback while in air.
+      horizontal: 0.6
+      vertical: 0.6
+
   # Set this to true if you want to notify players when combo mode is enabled (after eating gapple)
   # and disabled (when the time is expired). You can edit the messages in the messages.yml config file.
   notify-player: true
