@@ -10,6 +10,7 @@ update-notify: true
 # Toggle debug mode (leave it as false if not requested by the developer).
 debug: false
 
+
 #**************************************************#
 #                    KNOCKBACK                     #
 #**************************************************#
@@ -18,8 +19,17 @@ debug: false
 # 1.1 means 10% more than the previous knockback.
 # Please consider that the knockback is processed
 # with a certain order.
+#
+# FOR CUSTOM KNOCKBACK (PER WORLD), PLEASE CHECK AT
+# THE VERY BOTTOM OF THIS CONFIG FILE.
 #**************************************************#
 knockback:
+  # DEFAULT KNOCKBACK VALUES
+  # THE FOLLOWING APPLIES FOR WORLD/REGIONS SETTINGS THAT ARE NOT SPECIFIED ABOVE
+  # Example: If you want in worldB a different "normal.vertical" modifier, just create
+  # a world above and specify JUST "normal.vertical" value (or just the values you want to be different),
+  # all the others will be taken from the following default ones. The same applies for WorldGuard Regions
+  #
   normal:
     # Horizontal knockback, affects only X and Z coordinate values.
     horizontal: 0.4
@@ -177,3 +187,37 @@ randomizer:
     horizontal: 4
     # Vertical maximum percentage factor.
     vertical: 2
+
+#**************************************************#
+#                 PER-WORLD KNOCKBACK              #
+#**************************************************#
+# Custom knockback for specific worlds. Please specify world names lower-case!
+# How does it work?
+# 1) KnockbackMaster will read the values above in "knockback" section and consider them as DEFAULT.
+# 2) If a custom world name is specified here, the related values will overwrite the DEFAULT ones.
+# 3) You have to specify ONLY the values you want to be different from the DEFAULT ones
+#
+# EXAMPLE:
+# If you want to modify just the knockback.normal.horizontal and vertical values for world "MyCustomKbWorld1"
+# you have to write just 2 values under "mycustomworld1" section (note that world names must be lower-case)
+# you can follow the default example below:
+custom-worlds:
+  # Set to TRUE to enable custom KB by specifying worlds below.
+  enabled: false
+  worlds:
+    # Example world 1 (you can remove or edit this)
+    mycustomkbworld1:
+      knockback:
+        normal:
+          horizontal: 0.2
+          vertical: 0.23
+        sprinting:
+          mode: "legacy"
+        bow:
+          air:
+            in-air-multiplier: 0.8
+    # You can add/remove as many worlds as you want
+    mycustomkbworld2:
+      knockback:
+        normal:
+          horizontal: 1.1
