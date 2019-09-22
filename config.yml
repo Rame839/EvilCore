@@ -137,6 +137,11 @@ combo-mode:
   # Should the combo mode be enabled?
   enabled: false
 
+  # Enables the compatibility with minecraft versions above 1.9 (new combat system) and with plugins such as OldCombatMechanics
+  # Set this to true if you are using versions above 1.9 and you are using OldCombatMechanics or similar plugins.
+  # Set this to false if your server version is 1.8 or lower.
+  19-compatibility: false
+
   # Select the type of the combo mode. 1 means that the combo mode will be enabled when a player eats an enchanted golden apple.
   # 2 means a PERMANENT combo mode, from the login, to the logout of a player.
   type: 1
