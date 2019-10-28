@@ -24,6 +24,10 @@ debug: false
 # THE VERY BOTTOM OF THIS CONFIG FILE.
 #**************************************************#
 knockback:
+  # Should the knockback module (normal,sprinting,in-air,enchantment) be enabled?
+  # Setting this to "false" will let the Spigot server handle the hits and the related knockback.
+  enabled: true
+
   # DEFAULT KNOCKBACK VALUES
   # THE FOLLOWING APPLIES FOR WORLD/REGIONS SETTINGS THAT ARE NOT SPECIFIED ABOVE
   # Example: If you want in worldB a different "normal.vertical" modifier, just create
