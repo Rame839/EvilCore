@@ -65,17 +65,29 @@ knockback:
 
   # Enchantment section.
   enchantment:
-    # Knockback enchantment multipliers. You can configure a specific multiplier for each knockback level (Knockback I, II, etc.)
+    # Knockback enchantment multipliers. You can configure a specific multiplier (or value) for each knockback level (Knockback I, II, etc.)
     # If you have, for instance, KnockbackIV, you can add '4' after '3'. If you set 1.10, this results in a 10% increase.
     # If you set 2.15, this results in a 115% increase. The default values are similar to the standard Knockback I and II.
+    #
+    # If you do NOT want multipliers but instead you want custom values for a specific knockback enchantment level,
+    # you can add "horizontal" and "vertical" to the specific knockback level like following example.
+    #
+    # You can have all of the following values as multipliers, values or both, like in the example below that works like this:
+    # Knockback I will have a 105% increase in knockback.normal or knockback.sprinting values
+    # Knockback II will have a 190% increase
+    # Knockback III will overwrite knockback.normal values and sets them to 1.1 and 0.45 relatively.
+    # Please note that in the example below, the lines after '3' must have correct spacing or the config file will be invalid.
     knockback-level:
       '1': 2.05
       '2': 2.9
-      '3': 3.3
-      # If the enchant level is none of the above, this multiplier will be used.
+      '3': # Knockback III is not achievable in vanilla minecraft
+        horizontal: 1.1
+        vertical: 0.45
+      # If the enchantment level is none of the above, this multiplier will be used. This can only be a multiplier.
       other: 3.5
       # Should the knockback be the same also if the player is sprinting? (set to true for vanilla-like experience).
       ignore-sprinting: true
+
 
   # Section related to the knockback caused by BOW
   bow:
@@ -179,8 +191,12 @@ combo-mode:
   # How long should the combo effect be active? Set this value in seconds.
   gapple-duration: 30
 
-  # No damage ticks (basically set this to 1 if you want allow 20 hits per sec. 2 if 10 etc.)
-  # This value represent the number of ticks that should occur between 2 hits.
+  # No damage ticks. This value represent the number of ticks (1 tick = 50ms) that should occur between 2 hits.
+  # The standard minecraft value of this parameter is 20
+  # The logic behind how this value is processed in minecraft is not as "logical" as you may think but basically
+  # the following is true: LOWER no-damage-ticks values means HIGHER max hits per second.
+  # EXAMPLE: If you set the following value to 5, the players will receive not more than 1 hit every 5 ticks (250ms);
+  # EXAMPLE 2: If you set the following value to 3, the players will receive not more than 1 hit every 3 ticks (150ms).
   no-damage-ticks: 3
 
 #**************************************************#
