@@ -152,6 +152,10 @@ w-tap:
 combo-mode:
   # Should the combo mode be enabled?
   enabled: false
+  # A list of worlds where the combo mode should be disabled.
+  disabled-worlds:
+    - "exampleDisabledWorld1"
+    - "exampleDisabledWorld2"
 
   # Enables the compatibility with minecraft versions above 1.9 (new combat system) and with plugins such as OldCombatMechanics
   # Set this to true if you are using versions above 1.9 and you are using OldCombatMechanics or similar plugins.
@@ -183,6 +187,22 @@ combo-mode:
       # Air Multiplier, 1.0 means no difference, 0.6 means 40% less knockback while in air.
       horizontal: 0.6
       vertical: 0.6
+
+      # When enabled, height-control module will allow you to set a new vertical multiplier when the player is too high
+      # from the ground (configurable as height-blocks). This is useful to avoid getting players too high when in combo mode.
+      #
+      # NOTE: this module adds little computational effort to calculate the height of a player during combat, it won't hurt performance
+      # and it is here because you requested it. I recommend to find good combo-mode knockback values and no-damage-ticks so this
+      # module won't be needed as the players will naturally fall down and not exceed a certain height.
+      height-control:
+        enabled: false
+        # From what distance from the ground should we apply the new-vertical multiplier?
+        # 5.2 means that if the player is above 5.2 blocks from the ground then the new-vertical multiplier will be used.
+        height-blocks: 5.2
+        # The new vertical multiplier that has to be used ONLY when the player is above "height-blocks" from the ground,
+        # this will overwrite the combo-mode.knockback.air.vertical multiplier.
+        # 0.1 means 90% less vertical knockback, 0 means no vertical knockback.
+        new-vertical: 0.1
 
   # Set this to true if you want to notify players when combo mode is enabled (after eating gapple)
   # and disabled (when the time is expired). You can edit the messages in the messages.yml config file.
