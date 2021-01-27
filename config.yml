@@ -88,6 +88,20 @@ knockback:
       # Should the knockback be the same also if the player is sprinting? (set to true for vanilla-like experience).
       ignore-sprinting: true
 
+    # Section related to the knockback caused by the thorns enchantment
+    # You can choose to increase or decrease the knockback that players receive when attacking an armor with the thorns
+    # enchantment.
+    #
+    # Please note that everything related to the percentages of receiving an hit by the enchantment are not
+    # modified by the plugin and the vanilla behaviour remains: https://minecraft.gamepedia.com/Thorns
+    thorns:
+      # Should the plugin edit the THORNS knockback?
+      enabled: false
+      # Horizontal value. This is a value that will override the one defined in normal.horizontal or sprinting.horizontal
+      horizontal: 0.4
+      # Vertical value (same as horizontal, but for the other axis)
+      vertical: 0.38
+
 
   # Section related to the knockback caused by BOW
   bow:
